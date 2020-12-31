@@ -25,6 +25,11 @@ function setup() {
 	bobObject5 = new Bob(640,450,15)
 
 	rope1 = new Rope(bobObject1.body,roof.body,-60*2,0)
+	rope2 = new Rope(bobObject2.body,roof.body,-60*1,0)
+	rope3 = new Rope(bobObject3.body,roof.body,-60*0,0)
+	rope4 = new Rope(bobObject4.body,roof.body,-60*-1,0)
+	rope5 = new Rope(bobObject5.body,roof.body,-60*-2,0)
+
 	Engine.run(engine);
   
 }
@@ -41,10 +46,22 @@ function draw() {
   bobObject4.display();
   bobObject5.display();
   rope1.display();
+  rope2.display();
+  rope3.display();
+  rope4.display();
+  rope5.display();
+
   rectMode(CENTER);
   drawSprites();
  
 }
 
+function keyPressed() {
+if (keyCode === UP_ARROW)	{
 
+	Matter.Body.applyForce(bobObject.body,bobObject.body,position,{x:85,y:-85});
+}
+}
+
+	
 
